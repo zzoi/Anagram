@@ -1,0 +1,36 @@
+<!DOCTYPE >
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Anagram Test</title>
+		<link rel="stylesheet" href="css/anagram.css" type="text/css">
+		<link rel="stylesheet" href="css/TimeCircles.css" type="text/css">
+		<script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
+		<script src="js/TimeCircles.js" type="text/javascript"></script>
+		<script src="js/angular.min.js" type="text/javascript"></script>
+		<script src="js/anagram.js" type="text/javascript"></script>
+	</head>
+	<body ng-app="Anagram">
+		<header>
+				<h1>Guess the anagram</h1>
+		</header>
+		<section ng-controller="AnagramController">
+			<div id="countScore"><span>{{score}}</span></div>
+			<div id="canvas">
+				<div id="words">
+					<div class="letter fadeIn">L</div>	<div class="letter fadeIn">V</div><div class="letter fadeIn">E</div><div class="letter fadeIn">O</div>
+				</div>
+			</div>
+			<div id="control">
+				<div class="countdown" data-timer="60">
+				</div>
+				<div>
+					<input type="text" name="answer" ng-model="answer" placeholder="Enter your guess"><input class="button" type="button" name="send" value="Send" ng-click="validateWord()">
+				</div>
+				<div>
+					<input type="button" class="button" name="next" id="nextWord" value="Next Word" ng-click="displayWord()">
+				</div>
+			</div>
+		</section>
+	</body>
+</html>
